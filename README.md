@@ -1,5 +1,5 @@
 # A Responsive Personal Website
-A responsive personal website made using pure HTML, CSS and Javascript.
+A Responsive Personal Website made using pure HTML, CSS and Javascript.
 
 ## Details
 Built using node.js with Visual Studio Code.
