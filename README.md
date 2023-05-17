@@ -6,6 +6,17 @@ Built using node.js with Visual Studio Code.
 
 The Javascript was written in TypeScript. When building, it's processed by Babel to be ES5 compatabile then processed again by Webpack.
 
+### Main Features
+- Two Themes, Dark Theme and Light Theme.
+- Blog posting.
+- Project posting.
+
+### Javascript features
+- Theme memorisation.
+- Theme toggling if OS changes theme.
+- Theme toggle with a button.
+- Buttons shrink on click and and expand on mouse up.
+
 Feel free to use this website for your own personal use and modify it to your liking.
 
 ## How to develop with the project
