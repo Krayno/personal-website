@@ -17,5 +17,7 @@ Follow these steps:
 3. Open a terminal in Visual Studio Code and run command ```npm run dev```
 4. Open your preferred development server for live changes, I recommend using the Visual Studio Code Live Server Plugin.
 
-## How to build the project
+## How To Build The Project
 Once you've finished developing the project you can build the files to be used on your web server by running the following command: ```npm run build```.
+
+The files it uses are in ../src/ folder and will be processed and outputted to the ../dist/ folder.
