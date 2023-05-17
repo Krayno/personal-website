@@ -11,7 +11,7 @@ The Javascript was written in TypeScript. When building, it's processed by Babel
 - Blog posting.
 - Project posting.
 
-### Javascript features
+### Javascript Features
 - Theme memorisation.
 - Theme toggling if OS changes theme.
 - Theme toggle with a button.
@@ -19,19 +19,20 @@ The Javascript was written in TypeScript. When building, it's processed by Babel
 
 Feel free to use this website for your own personal use and modify it to your liking.
 
-## How to develop with the project
-Highly recommend developing using **node.js** so you can easily build the files using Babel and Webpack but it is possible to do so outside of node.js.
+## How To Develop And Build With The Project
+I highly recommend that you build the project using **node.js** as I have simplified the build process to a node.js command. It is still possible to build outside of node.js though.
 
-Follow these steps:
+Steps To Develop:
 1. Extract .zip that you downloaded from this repository.
 2. Open the project in Visual Studio Code.
-3. Open a terminal in Visual Studio Code and run command ```npm run dev```
+3. Open a terminal in Visual Studio Code and run the command ```npm run dev```
 4. Open your preferred development server for live changes, I recommend using the Visual Studio Code Live Server Plugin.
 
-## How To Build The Project
-Once you've finished developing the project you can build the files to be used on your web server by running the following command: ```npm run build```.
+Steps To Build:
+1. Open the project in Visual Studio Code.
+2. Open a terminal in Visual Studio Codee and run the command ```npm run build```
 
-The files it uses are in ../src/ folder and will be processed and outputted to the ../dist/ folder.
+The project will then build using the files that are in .//src/ folder and output the processed files to the ./dist/ folder.
 
 ## Images - Dark Theme
 About Me Page
