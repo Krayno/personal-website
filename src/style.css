@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+p {
+    margin: 10px;
+    line-height: 1.5em;
+}
+
+h1 {
+    margin: 10px;
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 10px;
+}
+
+:root {
+    --background-colour: rgb(234,220,191);
+    --primary-colour: rgb(250,245,239);
+    --button-colour: rgb(236, 219, 201);
+    --button-hover-colour: rgb(215, 200, 190);
+    --text-colour: rgb(69, 40, 15);
+    --hyperlink-text-colour: rgb(0, 84, 211);
+
+    background-color: var(--background-colour);
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text-colour);
+}
+
+nav {
+    display: flex;
+    max-width: 740px;
+    margin: auto;
+}
+
+main {
+    padding-top: 44px;
+    max-width: 750px;
+    margin: auto;
+}
+
+#left-nav-buttons, #right-nav-buttons {
+    display: inline-flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 0 10px;
+    gap: 5px;
+    list-style-type: none;
+}
+
+#left-nav-buttons {
+    justify-content: left;
+}
+
+#right-nav-buttons {
+    justify-content: right;
+}
+
+#navigation-header {
+    width: 100%;
+    background-color: var(--primary-colour);
+    position: fixed;
+    z-index: 1;
+    padding: 10px 0;
+}
+
+#button-group {
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    padding: 10px 0;
+    list-style-type: none;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.generic-button {
+    scale: 1;
+    color: var(--text-colour);
+    border-radius: 2em;
+    min-width: 90px;
+    height: auto;
+    background-color: var(--button-colour);
+    border: none;
+    font-size: 1rem;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+}
+
+.animatable {
+    transition: scale 0.1s ease-in, background-color 0.333s ease-out;
+}
+
+
+.generic-button:hover {
+    background-color: var(--button-hover-colour);
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#main-section {
+    margin: 48px 16px;
+    background-color: var(--primary-colour);
+    border-radius: 25px;
+    padding: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: var(--hyperlink-text-colour);
+}
+
+.selected-button {
+    background-color: var(--button-hover-colour);
+}
+
+a {
+    text-decoration: none;
+}
+
+.hide-element {
+    display: none;
+}
+
+.new-post-button {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0px;
+}
+
+.new-post-button a {
+    text-decoration: none;
+}
+
+.new-post-button span {
+    text-align: left;
+}
+
+.new-post-button h2, .new-post-button p {
+    margin: 5px 10px;
+}
+
+.new-post-button h2:hover {
+    text-decoration: underline;
+}
+
+.new-post-button p:last-child {
+    color: var(--hyperlink-text-colour);
+}
+
+.new-post-button p:last-child:hover {
+    text-decoration: underline;
+}
+
+.archive-button {
+    justify-content: flex-start;
+}
+
+.archive-button p {
+    margin: 5px 10px;
+}
+
+.archive-button p:first-child {
+    color: var(--hyperlink-text-colour);
+    flex-grow: 1;
+}
+
+.archive-button p:first-child:hover {
+    text-decoration: underline;
+}
+
+.archive-button p:last-child {
+    color: rgb(128, 128, 128);
+}
+
+@media only screen and (max-width: 600px) {
+    #left-nav-buttons, #right-nav-buttons, #button-group {
+        justify-content: center;
+        padding: 0 10px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    main {
+        padding-top: 92px;
+    }
+}
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+        --background-colour: rgb(28, 28, 26);
+        --primary-colour: rgb(35, 35, 32);
+        --button-colour: rgb(47, 47, 42);
+        --button-hover-colour: rgb(65, 65, 58);
+        --text-colour: rgb(211, 211, 211);
+        --hyperlink-text-colour: rgb(110, 168, 254);
+    }
+  }

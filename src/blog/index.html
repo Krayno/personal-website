@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+        <title>Blog - Title</title>
+    </head>
+
+    <body>
+        <header id="navigation-header">
+            <nav>
+                <ul id="left-nav-buttons">
+                    <li>
+                        <a href="../" target="_self" title="About Me Page" class="generic-button animatable" draggable="true">
+                            <span class="no-wrap">
+                                About Me
+                            </span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../blog/" target="_self" title="Blog Page" class="generic-button animatable selected-button" draggable="true">
+                            Blog
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../projects/" target="_self" title="Projects Page" class="generic-button animatable" draggable="true">
+                            Projects
+                        </a>
+                    </li>
+                </ul>
+                <ul id="right-nav-buttons">
+                    <li>
+                        <a href="" target="blank" title="Github Repository" class="generic-button animatable" draggable="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16">
+                                <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z" />
+                            </svg>
+                            Github
+                        </a>
+                    </li>
+                    <li>
+                        <button draggable="true" id="dark-theme-button" title="Dark Theme" class="generic-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+                                <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+                            </svg>
+                            Theme
+                        </button>
+                        <button draggable="true" id="light-theme-button" title="Light Theme" class="generic-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-sun-fill" viewBox="0 0 16 16">
+                                <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+                            </svg>
+                            Theme
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <section id="main-section">
+                <ul id="button-group">
+                    <li>
+                        <button draggable="true" class="animatable selected-button button-group-one generic-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-envelope-fill" viewBox="0 0 16 16">
+                                <path d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555ZM0 4.697v7.104l5.803-3.558L0 4.697ZM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757Zm3.436-.586L16 11.801V4.697l-5.803 3.546Z" />
+                            </svg>
+                            New Posts
+                        </button>
+                    </li>
+                    <li>
+                        <button draggable="true" class="animatable button-group-one generic-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-archive-fill" viewBox="0 0 16 16">
+                                <path d="M12.643 15C13.979 15 15 13.845 15 12.5V5H1v7.5C1 13.845 2.021 15 3.357 15h9.286zM5.5 7h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zM.8 1a.8.8 0 0 0-.8.8V3a.8.8 0 0 0 .8.8h14.4A.8.8 0 0 0 16 3V1.8a.8.8 0 0 0-.8-.8H.8z" />
+                            </svg>
+                            Archive
+                        </button>
+                    </li>
+                </ul>
+                <section id="new-posts-section">
+                    <h1>
+                        New Posts
+                    </h1>
+                    <a href="" target="_self" title="" class="animatable new-post-button generic-button">
+                        <h2>
+                            Title
+                        </h2>
+                        <p>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Odio, perferendis tenetur vitae dolore a omnis, repudiandae adipisci nisi sint porro, alias unde blanditiis amet ipsa. Sint cupiditate aliquid rerum! Totam?
+                        </p>
+                        <p>
+                            Read More
+                        </p>
+                    </a>
+                </section>
+                <section id="archive-section" class="hide-element">
+                    <h1>
+                        Archived Posts
+                    </h1>
+                    <h2>
+                        2023
+                    </h2>
+                    <a href="" target="_self" title="" class="animatable archive-button generic-button">
+                        <p>
+                            Title
+                        </p>
+                        <p>
+                            Month Day, Year
+                        </p>
+                    </a>
+                </section>
+            </section>
+        </main>
+        <script src="../script.js"></script>
+    </body>
+
+</html>

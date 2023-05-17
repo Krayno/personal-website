@@ -1,0 +1,20 @@
+{
+  "name": "blog-website",
+  "version": "1.0.0",
+  "description": "",
+  "private": "true",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "babel src --out-dir dist && webpack && copy \".\\src\\index.html\" \".\\dist\\\" && copy \".\\src\\style.css\" \".\\dist\\\" && Xcopy \".\\src\\projects\\\" \".\\dist\\projects\\\" /Y /S && Xcopy \".\\src\\blog\\\" \".\\dist\\blog\\\" /Y /S "
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/cli": "^7.21.5",
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
+    "webpack": "^5.82.1",
+    "webpack-cli": "^5.1.1"
+  }
+}
