@@ -19,8 +19,8 @@ h2 {
 }
 
 :root {
-    --background-colour: rgb(234,220,191);
-    --primary-colour: rgb(250,245,239);
+    --background-colour: rgb(234, 220, 191);
+    --primary-colour: rgb(250, 245, 239);
     --button-colour: rgb(236, 219, 201);
     --button-hover-colour: rgb(215, 200, 190);
     --text-colour: rgb(69, 40, 15);
@@ -43,7 +43,8 @@ main {
     margin: auto;
 }
 
-#left-nav-buttons, #right-nav-buttons {
+#left-nav-buttons,
+#right-nav-buttons {
     display: inline-flex;
     align-items: center;
     flex-grow: 1;
@@ -147,7 +148,8 @@ a {
     text-align: left;
 }
 
-.new-post-button h2, .new-post-button p {
+.new-post-button h2,
+.new-post-button p {
     margin: 5px 10px;
 }
 
@@ -180,12 +182,21 @@ a {
     text-decoration: underline;
 }
 
-.archive-button p:last-child {
+.gray-text {
     color: rgb(128, 128, 128);
 }
 
+.content-container {
+    background-color: var(--button-colour);
+    border-radius: 25px;
+    padding: 10px;
+}
+
 @media only screen and (max-width: 600px) {
-    #left-nav-buttons, #right-nav-buttons, #button-group {
+
+    #left-nav-buttons,
+    #right-nav-buttons,
+    #button-group {
         justify-content: center;
         padding: 0 10px;
     }
@@ -200,7 +211,7 @@ a {
     }
 }
 
-  @media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {
     :root {
         --background-colour: rgb(28, 28, 26);
         --primary-colour: rgb(35, 35, 32);
@@ -209,4 +220,4 @@ a {
         --text-colour: rgb(211, 211, 211);
         --hyperlink-text-colour: rgb(110, 168, 254);
     }
-  }
+}
