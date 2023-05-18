@@ -1,5 +1,5 @@
 # A Responsive Personal Website
-A responsive personal website made using pure HTML, CSS and Javascript.
+A Responsive Personal Website made using pure HTML, CSS and Javascript.
 
 ## Details
 Built using node.js with Visual Studio Code.
@@ -8,8 +8,8 @@ The Javascript was written in TypeScript. When building, it's processed by Babel
 
 ### Main Features
 - Two Themes, Dark Theme and Light Theme.
-- Blog posting.
-- Project posting.
+- Blog page with Archive page.
+- Project page.
 
 ### Javascript Features
 - Theme memorisation.
@@ -36,32 +36,33 @@ The project will then build using the files that are in .//src/ folder and outpu
 
 ## Images - Dark Theme
 About Me Page
-![aboutme](https://github.com/Krayno/personal-website/assets/48147112/4614b0db-d4f0-4188-8598-2094bf8d9ce9)
+![darktheme-about-me](https://github.com/Krayno/personal-website/assets/48147112/ecfea679-8fed-4a35-89e6-27fa2f944362)
+
 
 Blog Page - New Posts
-![Blog-NewPosts](https://github.com/Krayno/personal-website/assets/48147112/cac0212a-5936-42ed-aeff-2c67624c7989)
+![darktheme-blog](https://github.com/Krayno/personal-website/assets/48147112/ab0e2882-3789-40de-855c-cfc489262a5d)
 
 Blog Page - Archive
 ![Blog-Archive](https://github.com/Krayno/personal-website/assets/48147112/803a880a-f38f-464e-a7c5-adfc26b48f41)
+
+Blog Page - Blog Post
+![darktheme-blog-post](https://github.com/Krayno/personal-website/assets/48147112/46d94457-b15b-4d6c-bd49-7652cb017dfe)
 
 Projects Page
 ![Projects](https://github.com/Krayno/personal-website/assets/48147112/56390c3a-03fc-47fb-9592-d2db0f0e9834)
 
 ## Images - Light Theme
 About Me Page
-![image](https://github.com/Krayno/personal-website/assets/48147112/8eb72e93-a84a-48a6-8384-d870f771a3ba)
+![lighttheme-about-me](https://github.com/Krayno/personal-website/assets/48147112/30a6c593-7451-473a-8de4-fca5b592c257)
 
 Blog Page - New Posts
-![image (1)](https://github.com/Krayno/personal-website/assets/48147112/eadc0330-423f-45ba-83c1-a18cf53ec318)
+![lighttheme-blog-new-posts](https://github.com/Krayno/personal-website/assets/48147112/5a362ec5-b4ea-4d8f-a1ce-8a3ceededae8)
+
+Blog Page - Blog Post
+![lighttheme-blog-post](https://github.com/Krayno/personal-website/assets/48147112/21bf9e75-e4ed-4e36-9b1f-b9af404ff459)
 
 Blog Page - Archive
 ![image (2)](https://github.com/Krayno/personal-website/assets/48147112/036adaaa-35d4-4ac5-b59d-3c12e7b1c339)
 
 Projects Page
 ![image (3)](https://github.com/Krayno/personal-website/assets/48147112/059ad408-311b-4fbc-8eff-b2953ddcbd72)
-
-
-
-
-
-
