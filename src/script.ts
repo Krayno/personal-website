@@ -1,36 +1,33 @@
 //-- Theme Button toggle icon --
 
-//Get theme buttons.
-let darkThemeButton = document.getElementById("dark-theme-button");
-let lightThemeButton = document.getElementById("light-theme-button");
+//Get theme button.
+let themeButton = document.getElementById("theme-button");
+
+//Track the current theme.
+let darkTheme = false;
+
+//Theme button SVG Icon Elements.
+let darkThemeIcon = '<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-moon-fill\" viewBox=\"0 0 16 16\"><path d=\"M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z\" \/><\/svg>Theme'
+let lightThemeIcon = '<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"20\" height=\"20\" fill=\"currentColor\" class=\"bi bi-sun-fill\" viewBox=\"0 0 16 16\">\r\n<path d=\"M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z\" \/><\/svg>Theme'
 
 //Register event handler to both theme button 'click' events.
-if (darkThemeButton && lightThemeButton) {
-    darkThemeButton.addEventListener('click', OnThemeButtonClicked);
-    lightThemeButton.addEventListener('click', OnThemeButtonClicked);
+if (themeButton) {
+    themeButton.addEventListener('click', OnThemeButtonClicked);
 }
 else {
-    console.log("ERROR: Could not find either \"dark-theme-button\" or \"light-theme-button\" to register an event handler to the 'click' event.");
+    console.log("ERROR: Could not find either \"theme-button\" to register an event handler to the 'click' event.");
 }
 
 //If theme button is clicked, toggle icon and theme.
 function OnThemeButtonClicked(ev: Event) {
-    if (darkThemeButton && lightThemeButton) {
+    if (themeButton) {
         if (ev.currentTarget instanceof HTMLElement) {
             let themeButton = ev.currentTarget;
-            themeButton.classList.add("hide-element");
-            if (themeButton.id == "dark-theme-button") {
-                lightThemeButton.classList.remove("hide-element");
-                //Toggle light theme and set localStorage.
-                SetTheme(lightThemeColours);
-                localStorage.setItem("theme", "lightTheme");
-            }
-            else if (themeButton.id == "light-theme-button") {
-                darkThemeButton.classList.remove("hide-element");
-                //Toggle dark theme and set localStorage.
-                SetTheme(darkThemeColours);
-                localStorage.setItem("theme", "darkTheme");
-            }
+            //Toggle theme state.
+            darkTheme = !darkTheme;
+            SetTheme(darkTheme ? darkThemeColours : lightThemeColours);
+            localStorage.setItem("theme", darkTheme ? "darkTheme" : "lightTheme");
+            themeButton.innerHTML = darkTheme ? darkThemeIcon : lightThemeIcon;
         }
     }
 
@@ -194,38 +191,44 @@ function OnButtonGroupOneClicked(ev: Event) {
 }
 
 //Set theme based on current localStorage theme and change icon to match if necessary.
-if (lightThemeButton && darkThemeButton) {
+if (themeButton) {
     if (localStorage.getItem("theme") == "darkTheme") {
-        SetTheme(darkThemeColours);
-        lightThemeButton.classList.add("hide-element");
+        darkTheme = true;
+        SetTheme(darkThemeColours)
+        themeButton.innerHTML = darkThemeIcon;
+
     }
     else {
-        SetTheme(lightThemeColours);
-        darkThemeButton.classList.add("hide-element");
+        darkTheme = false;
+        SetTheme(lightThemeColours)
+        themeButton.innerHTML = lightThemeIcon;
     }
 }
 else {
-    console.log("ERROR: Could not find either \"dark-theme-button\" or \"light-theme-button\" to set the initial theme based on the 'theme' variable in stored in local storage.");
+    console.log("ERROR: Could not find either \"theme-button\" to set the initial theme based on the 'theme' variable in stored in local storage.");
 }
 
-//Watch for OS theme change and set theme and local storage accordingly.
+//Set theme based on OS and watch for OS theme change and set theme and local storage accordingly.
+OnOSThemeChange(matchMedia('(prefers-color-scheme: dark)'));
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', OnOSThemeChange);
 
-function OnOSThemeChange(ev: MediaQueryListEvent) {
-    if (lightThemeButton && darkThemeButton) {
+function OnOSThemeChange(ev: MediaQueryListEvent | MediaQueryList) {
+    if (themeButton) {
         if (ev.matches) {
+            darkTheme = true;
+            SetTheme(darkThemeColours)
+            themeButton.innerHTML = darkThemeIcon;
             localStorage.setItem("theme", "darkTheme");
-            SetTheme(darkThemeColours);
-            lightThemeButton.classList.add("hide-element");
-
         }
         else {
+            darkTheme = false;
+            SetTheme(lightThemeColours)
+            themeButton.innerHTML = lightThemeIcon;
             localStorage.setItem("theme", "lightTheme");
-            SetTheme(lightThemeColours);
-            darkThemeButton.classList.add("hide-element");
+            console.log(darkTheme);
         }
     }
     else {
-        console.log("ERROR: Could not find either \"dark-theme-button\" or \"light-theme-button\" to set the initial theme based on the OS theme.");
+        console.log("ERROR: Could not find either \"theme-button\" to set the initial theme based on the OS theme.");
     }
 }

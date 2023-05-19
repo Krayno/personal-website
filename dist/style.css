@@ -74,7 +74,7 @@ main {
     justify-content: flex-start;
     align-items: center;
     width: 100%;
-    padding: 10px 0;
+    padding: 10px 10px 0 10px;
     list-style-type: none;
     flex-wrap: wrap;
     gap: 10px;
@@ -128,10 +128,6 @@ a {
 
 a {
     text-decoration: none;
-}
-
-.hide-element {
-    display: none;
 }
 
 .new-post-button {
@@ -192,13 +188,16 @@ a {
     padding: 10px;
 }
 
+.hide-element {
+    display: none;
+}
+
 @media only screen and (max-width: 600px) {
 
     #left-nav-buttons,
     #right-nav-buttons,
     #button-group {
         justify-content: center;
-        padding: 0 10px;
     }
 
     nav {
