@@ -5,7 +5,7 @@
   "private": "true",
   "scripts": {
     "dev": "tsc -w",
-    "build": "babel src --out-dir dist && webpack && copy \".\\src\\index.html\" \".\\dist\\\" && copy \".\\src\\style.css\" \".\\dist\\\" && Xcopy \".\\src\\projects\\\" \".\\dist\\projects\\\" /Y /S && Xcopy \".\\src\\blog\\\" \".\\dist\\blog\\\" /Y /S "
+    "build": "babel src --out-dir dist && webpack && copy \".\\src\\index.html\" \".\\dist\\\" && copy \".\\src\\style.css\" \".\\dist\\\" && Xcopy \".\\src\\projects\\\" \".\\dist\\projects\\\" /Y /S && Xcopy \".\\src\\blog\\\" \".\\dist\\blog\\\" /Y /S && Xcopy \".\\src\\images\\\" \".\\dist\\images\\\" /Y /S "
   },
   "keywords": [],
   "author": "",
