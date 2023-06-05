@@ -147,22 +147,23 @@ else {
 OnOSThemeChange(matchMedia('(prefers-color-scheme: dark)'));
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', OnOSThemeChange);
 function OnOSThemeChange(ev) {
-    if (themeButton) {
-        if (ev.matches) {
-            darkTheme = true;
-            SetTheme(darkThemeColours);
-            themeButton.innerHTML = darkThemeIcon;
-            localStorage.setItem("theme", "darkTheme");
+    if (localStorage.getItem("theme") == null) {
+        if (themeButton) {
+            if (ev.matches) {
+                darkTheme = true;
+                SetTheme(darkThemeColours);
+                themeButton.innerHTML = darkThemeIcon;
+                localStorage.setItem("theme", "darkTheme");
+            }
+            else {
+                darkTheme = false;
+                SetTheme(lightThemeColours);
+                themeButton.innerHTML = lightThemeIcon;
+                localStorage.setItem("theme", "lightTheme");
+            }
         }
         else {
-            darkTheme = false;
-            SetTheme(lightThemeColours);
-            themeButton.innerHTML = lightThemeIcon;
-            localStorage.setItem("theme", "lightTheme");
-            console.log(darkTheme);
+            console.log("ERROR: Could not find either \"theme-button\" to set the initial theme based on the OS theme.");
         }
-    }
-    else {
-        console.log("ERROR: Could not find either \"theme-button\" to set the initial theme based on the OS theme.");
     }
 }

@@ -196,7 +196,6 @@ if (themeButton) {
         darkTheme = true;
         SetTheme(darkThemeColours)
         themeButton.innerHTML = darkThemeIcon;
-
     }
     else {
         darkTheme = false;
@@ -208,27 +207,28 @@ else {
     console.log("ERROR: Could not find either \"theme-button\" to set the initial theme based on the 'theme' variable in stored in local storage.");
 }
 
-//Set theme based on OS and watch for OS theme change and set theme and local storage accordingly.
+//Set theme based on OS Theme if localstorage has not been set and watch for OS theme change and set theme and local storage accordingly.
 OnOSThemeChange(matchMedia('(prefers-color-scheme: dark)'));
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', OnOSThemeChange);
 
 function OnOSThemeChange(ev: MediaQueryListEvent | MediaQueryList) {
-    if (themeButton) {
-        if (ev.matches) {
-            darkTheme = true;
-            SetTheme(darkThemeColours)
-            themeButton.innerHTML = darkThemeIcon;
-            localStorage.setItem("theme", "darkTheme");
+    if (localStorage.getItem("theme") == null) {
+        if (themeButton) {
+            if (ev.matches) {
+                darkTheme = true;
+                SetTheme(darkThemeColours)
+                themeButton.innerHTML = darkThemeIcon;
+                localStorage.setItem("theme", "darkTheme");
+            }
+            else {
+                darkTheme = false;
+                SetTheme(lightThemeColours)
+                themeButton.innerHTML = lightThemeIcon;
+                localStorage.setItem("theme", "lightTheme");
+            }
         }
         else {
-            darkTheme = false;
-            SetTheme(lightThemeColours)
-            themeButton.innerHTML = lightThemeIcon;
-            localStorage.setItem("theme", "lightTheme");
-            console.log(darkTheme);
+            console.log("ERROR: Could not find either \"theme-button\" to set the initial theme based on the OS theme.");
         }
-    }
-    else {
-        console.log("ERROR: Could not find either \"theme-button\" to set the initial theme based on the OS theme.");
     }
 }
