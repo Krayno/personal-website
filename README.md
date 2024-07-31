@@ -30,9 +30,9 @@ Steps To Develop:
 
 Steps To Build:
 1. Open the project in Visual Studio Code.
-2. Open a terminal in Visual Studio Codee and run the command ```npm run build```
+2. Open a terminal in Visual Studio Code and run the command ```npm run build```
 
-The project will then build using the files that are in .//src/ folder and output the processed files to the ./dist/ folder.
+The project will then build using the files that are in ./src/ folder and output the processed files to the ./dist/ folder.
 
 ## Images - Dark Theme
 About Me Page
